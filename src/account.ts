@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 export type AccountType = {
-  account_name: string
+  customer_id: string
 	balance: number
 	account_type: string
 	
@@ -11,7 +11,7 @@ export type AccountDocument = mongoose.Document & AccountType
 
 //schema definition
 const AccountSchema = new mongoose.Schema({
-  account_name: String,
+  customer_id: String,
 	balance: Number,
 	account_type: String
 	

@@ -1,15 +1,20 @@
 import mongoose from 'mongoose'
 
 export type TransactionType = {
-    amount: number
-	date: string  //date gak bisa diliterasi 
-	transaction_type: string
+  account_id : string
+  amount: number
+	date?: Date;  
+	description: string
 }
 
 export type TransactionDocument = mongoose.Document & TransactionType
 
 //schema definition
 const TransactionSchema = new mongoose.Schema({
+  account_id: {
+    type: String,
+    required: 'Enter aacount id Please'      
+},
     amount: {
         type: Number,
         required: 'Enter Amaount'      
@@ -18,7 +23,7 @@ const TransactionSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-	transaction_type: {
+    description: {
         type: String,
         required: 'Enter Type Transaction Please'      
     }

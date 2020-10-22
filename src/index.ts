@@ -120,7 +120,7 @@ app.get('/account/:id', async function(req, res, next) {
   return res.send(account)
 })
 
-app.put('/account', async function(req, res, next) {
+app.put('/account/:id', async function(req, res, next) {
   try{
     await accountModel.update(req.params.id, req.body)
   } catch (error){
@@ -130,7 +130,7 @@ app.put('/account', async function(req, res, next) {
   res.send({success :true})
 })
 
-app.delete('/account', async function(req, res, next) {
+app.delete('/account/:id', async function(req, res, next) {
   try{
     await accountModel.delete(req.params.id)
   } catch (error){
@@ -174,7 +174,7 @@ app.get('/transaction/:id', async function(req, res, next) {
   return res.send(transaction)
 })
 
-app.put('/transaction', async function(req, res, next) {
+app.put('/transaction/:id', async function(req, res, next) {
   try{
     await transactionModel.update(req.params.id, req.body)
   } catch (error){
@@ -184,7 +184,7 @@ app.put('/transaction', async function(req, res, next) {
   res.send({success :true})
 })
 
-app.delete('/transaction', async function(req, res, next) {
+app.delete('/transaction/:id', async function(req, res, next) {
   try{
     await transactionModel.delete(req.params.id)
   } catch (error){
