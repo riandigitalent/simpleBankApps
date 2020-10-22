@@ -2,8 +2,8 @@ import mongoose from 'mongoose'
 
 export type AccountType = {
   account_name: string
-	balance: string
-	account_type: number
+	balance: number
+	account_type: string
 	
 }
 
@@ -12,8 +12,8 @@ export type AccountDocument = mongoose.Document & AccountType
 //schema definition
 const AccountSchema = new mongoose.Schema({
   account_name: String,
-	balance: String,
-	account_type: Number
+	balance: Number,
+	account_type: String
 	
 })
 

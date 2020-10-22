@@ -24,7 +24,7 @@ async function initApp() {
   const app = express()
 
   //init db
-  await mongoose.connect(`${process.env.MONGODB_URI}`, { useNewUrlParser: true, useUnifiedTopology: true })
+  await mongoose.connect(`${process.env.MONGODB_URI}`, { useNewUrlParser: true, useUnifiedTopology: true , useFindAndModify: false})
 
   //panggil function di controller
   const customerModel = new Customer()
